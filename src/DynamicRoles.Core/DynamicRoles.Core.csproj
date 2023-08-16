@@ -13,7 +13,7 @@
 
 		<TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
 		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
+		<ImplicitUsings>false</ImplicitUsings>
 		<RootNamespace>DynamicRoles.Core</RootNamespace>
 		<AssemblyName>DynamicRoles.Core</AssemblyName>
 		<PackageId>DynamicRolesCore</PackageId>
