@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Properties\launchSettings.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="MudBlazor" Version="6.2.0" />
+		<PackageReference Include="Scrutor" Version="4.2.1" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DynamicRoles.Blazor\DynamicRoles.Blazor.csproj" />
+    <ProjectReference Include="..\DynamicRoles.SharedDemo\DynamicRoles.SharedDemo.csproj" />
+  </ItemGroup>
+
+</Project>

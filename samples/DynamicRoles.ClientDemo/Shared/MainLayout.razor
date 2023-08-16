@@ -1,0 +1,53 @@
+﻿@inherits LayoutComponentBase
+
+<style>
+    .main-container {
+        height: 100%;
+        border-width: 4px 4px 0px 4px;
+        border-style: solid;
+        border-color: rgba(255,255,255, 0);
+    }
+
+    .left-side-bar {
+        border-top: 4px solid rgba(255,255,255, 0);
+    }
+</style>
+
+<MudThemeProvider IsDarkMode="true" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Secondary">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h6">Dynamic Roles Demo</MudText>
+        <MudSpacer />
+        <LoginDisplay />
+    </MudAppBar>
+
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="2">
+        <MudNavMenu>
+            <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Home" Href="/">Home</MudNavLink>
+            <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.BugReport" Href="/swagger" Target="_blank">Api</MudNavLink>
+
+            <Microsoft.AspNetCore.Components.Authorization.AuthorizeView>           
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Badge" Href="/roles">Roles</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Policy" Href="/permissions">Permissions</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Material.Outlined.Search" Href="/example">Examples</MudNavLink>
+            </Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+        </MudNavMenu>
+    </MudDrawer>
+
+    <MudMainContent Class="main-container">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

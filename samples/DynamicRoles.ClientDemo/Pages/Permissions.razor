@@ -1,0 +1,33 @@
+﻿@attribute [Authorize]
+@page "/permissions"
+@inherits CommonComponent
+
+@using DynamicRoles.ClientDemo.Pages.Shared;
+@using DynamicRoles.SharedDemo.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+
+@if (RolesVm != null && PermissionsVm != null)
+{
+    <MudToolBar>
+        <MudText Typo="Typo.h6">Roles Permissions</MudText>
+    </MudToolBar>
+
+    <MudSimpleTable Dense="true">
+        <thead>
+            <tr>
+                <th><MudText Typo="Typo.subtitle1">Permissions</MudText></th>
+                @foreach (var role in RolesVm.Roles)
+                {
+                    <th><MudText Typo="Typo.subtitle1">@role.Name</MudText></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            <PermissionsRows TPermissionType="Feature1_Permissions" RolesVm="RolesVm"
+                         PermissionsData="PermissionsVm.Feature1_Permissions" />
+
+            <PermissionsRows TPermissionType="Feature2_Permissions" RolesVm="RolesVm"
+                             PermissionsData="PermissionsVm.Feature2_Permissions" />
+        </tbody>
+    </MudSimpleTable>
+}

@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{052A2525-9E1D-4CB7-A327-EA05E7D70E95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{09BD2EAC-9FD3-4C85-B494-8F34D78494D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.ServerDemo", "samples\DynamicRoles.ServerDemo\DynamicRoles.ServerDemo.csproj", "{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.Blazor", "src\DynamicRoles.Blazor\DynamicRoles.Blazor.csproj", "{755596B9-79AE-4F92-9CD3-B14233028527}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.ClientDemo", "samples\DynamicRoles.ClientDemo\DynamicRoles.ClientDemo.csproj", "{D6E31D8C-8700-40C4-B595-E8FAE6950442}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.SharedDemo", "samples\DynamicRoles.SharedDemo\DynamicRoles.SharedDemo.csproj", "{6887DBA1-D929-4447-A783-90562785FF5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{AFEAB3CC-AF9A-4FF3-8184-ECA741C551CC}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.CoreTests", "tests\DynamicRoles.CoreTests\DynamicRoles.CoreTests.csproj", "{D9761771-430D-4F75-AA0F-19EB378664C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.Shared", "src\DynamicRoles.Shared\DynamicRoles.Shared.csproj", "{FAE268E6-91E7-4C85-B5D8-89121675210B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.Server", "src\DynamicRoles.Server\DynamicRoles.Server.csproj", "{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.Core", "src\DynamicRoles.Core\DynamicRoles.Core.csproj", "{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.ServerTests", "tests\DynamicRoles.ServerTests\DynamicRoles.ServerTests.csproj", "{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.Tests", "src\DynamicRoles.Tests\DynamicRoles.Tests.csproj", "{BEF88B9C-5389-44FB-89F3-E39B49F94946}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicRoles.TestsDemo", "samples\DynamicRoles.TestsDemo\DynamicRoles.TestsDemo.csproj", "{50E5AE9D-45B9-4535-ABD8-53116680813D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755596B9-79AE-4F92-9CD3-B14233028527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755596B9-79AE-4F92-9CD3-B14233028527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755596B9-79AE-4F92-9CD3-B14233028527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755596B9-79AE-4F92-9CD3-B14233028527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E31D8C-8700-40C4-B595-E8FAE6950442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E31D8C-8700-40C4-B595-E8FAE6950442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E31D8C-8700-40C4-B595-E8FAE6950442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E31D8C-8700-40C4-B595-E8FAE6950442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6887DBA1-D929-4447-A783-90562785FF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6887DBA1-D929-4447-A783-90562785FF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6887DBA1-D929-4447-A783-90562785FF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6887DBA1-D929-4447-A783-90562785FF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9761771-430D-4F75-AA0F-19EB378664C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9761771-430D-4F75-AA0F-19EB378664C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9761771-430D-4F75-AA0F-19EB378664C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9761771-430D-4F75-AA0F-19EB378664C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE268E6-91E7-4C85-B5D8-89121675210B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE268E6-91E7-4C85-B5D8-89121675210B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE268E6-91E7-4C85-B5D8-89121675210B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE268E6-91E7-4C85-B5D8-89121675210B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF88B9C-5389-44FB-89F3-E39B49F94946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF88B9C-5389-44FB-89F3-E39B49F94946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF88B9C-5389-44FB-89F3-E39B49F94946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF88B9C-5389-44FB-89F3-E39B49F94946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E5AE9D-45B9-4535-ABD8-53116680813D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E5AE9D-45B9-4535-ABD8-53116680813D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E5AE9D-45B9-4535-ABD8-53116680813D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E5AE9D-45B9-4535-ABD8-53116680813D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D9D8F198-B9F1-4B7F-A07B-BCA9C91488D1} = {09BD2EAC-9FD3-4C85-B494-8F34D78494D8}
+		{755596B9-79AE-4F92-9CD3-B14233028527} = {384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}
+		{D6E31D8C-8700-40C4-B595-E8FAE6950442} = {09BD2EAC-9FD3-4C85-B494-8F34D78494D8}
+		{6887DBA1-D929-4447-A783-90562785FF5C} = {09BD2EAC-9FD3-4C85-B494-8F34D78494D8}
+		{D9761771-430D-4F75-AA0F-19EB378664C7} = {052A2525-9E1D-4CB7-A327-EA05E7D70E95}
+		{FAE268E6-91E7-4C85-B5D8-89121675210B} = {384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}
+		{4C42EF1A-57E7-4ED7-881D-E9D136DF9EE1} = {384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}
+		{6C76DF8C-9CAA-42F6-A7FE-AA3999EE43D9} = {384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}
+		{14D8C984-796D-4FA5-86B9-BE2A5E39DCC0} = {052A2525-9E1D-4CB7-A327-EA05E7D70E95}
+		{BEF88B9C-5389-44FB-89F3-E39B49F94946} = {384B9FBF-D5D1-4FDA-9604-26DC1BDAE0EF}
+		{50E5AE9D-45B9-4535-ABD8-53116680813D} = {09BD2EAC-9FD3-4C85-B494-8F34D78494D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3388689A-0466-497A-B8E4-757073636A25}
+	EndGlobalSection
+EndGlobal

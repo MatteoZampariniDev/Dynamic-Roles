@@ -1,0 +1,20 @@
+﻿@using DynamicRoles.Blazor.Services;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@code
+{
+    [Inject]
+    public IClientAuthorizationService AuthService { get; set; } = null!;
+
+    [CascadingParameter]
+    protected Task<AuthenticationState>? AuthState { get; set; }
+
+    protected async Task<bool> AuthorizeAsync() => await AuthService.AuthorizeAsync(AuthState);
+    protected bool Authorize() => AuthorizeAsync().Result;
+
+    protected async Task<bool> AuthorizeAsync<TPermissionType>(TPermissionType permissions)
+        where TPermissionType : struct, Enum => await AuthService.AuthorizeAsync(AuthState, permissions);
+
+    protected bool Authorize<TPermissionType>(TPermissionType permissions)
+        where TPermissionType : struct, Enum => AuthorizeAsync<TPermissionType>(permissions).Result;
+}

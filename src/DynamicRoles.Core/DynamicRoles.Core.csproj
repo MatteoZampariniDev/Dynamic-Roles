@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Title>Dynamic Roles</Title>
+		<Version>1.0.0</Version>
+		<Authors>Matteo Zamparini</Authors>		
+		<PackageDescription>Roles with permissions that can be changed without updating the code.</PackageDescription>
+		<RepositoryUrl></RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<ImplicitUsings>false</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+		<TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
+		<RootNamespace>DynamicRoles.Core</RootNamespace>
+		<AssemblyName>DynamicRoles.Core</AssemblyName>
+		<PackageId>DynamicRoles.Core</PackageId>
+	</PropertyGroup>
+		
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+</Project>

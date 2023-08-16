@@ -1,0 +1,58 @@
+﻿@attribute [Authorize]
+@page "/role"
+@page "/role/{Id}"
+
+@using DynamicRoles.Blazor
+@using DynamicRoles.ClientDemo.Common.Services;
+@using DynamicRoles.SharedDemo.Models;
+@using DynamicRoles.SharedDemo.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+
+<MudForm Model="@(RoleDto)" Style="width: 30vw">
+    <MudTextField @bind-Value="RoleDto.Name" Label="Name" For="@(() => RoleDto.Name)" Variant="Variant.Text" />
+</MudForm>
+
+<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SaveAsync">Save</MudButton>
+<MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="Cancel">Cancel</MudButton>
+
+
+@code
+{
+    [Inject]
+    public IRolesClient RolesClient { get; set; } = null!;
+    [Inject]
+    public NavigationManager NavManager { get; set; } = null!;
+
+    [Parameter]
+    public string? Id { get; set; }
+
+    private RoleDto RoleDto { get; set; } = new RoleDto();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(Id))
+        {
+            RoleDto = await RolesClient.GetAsync(Id);
+        }
+    }
+
+    private async Task SaveAsync()
+    {
+        if (string.IsNullOrEmpty(Id))
+        {
+            RoleDto.Id = "";
+            await RolesClient.CreateAsync(RoleDto);
+        }
+        else
+        {
+            await RolesClient.UpdateAsync(Id, RoleDto);
+        }
+
+        NavManager.NavigateTo("/roles");
+    }
+
+    private void Cancel()
+    {
+        NavManager.NavigateTo("/roles");
+    }
+}

@@ -1,0 +1,158 @@
+﻿@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+@page "/example"
+@using DynamicRoles.Blazor;
+@using DynamicRoles.ClientDemo.Pages.Shared;
+@using DynamicRoles.Core;
+@using DynamicRoles.SharedDemo.Permissions;
+    
+@inherits CommonComponent
+
+<MudSimpleTable Style="overflow-x: auto;">
+    <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_2 (@Feature1_Permissions.Permission_1.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_1)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_2 (@Feature1_Permissions.Permission_2.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_2)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+                <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_3 (@Feature1_Permissions.Permission_3.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_3)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+                <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_4 (@Feature1_Permissions.Permission_4.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_4)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+                        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_5 (@Feature1_Permissions.Permission_5.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_5)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+                                <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_6 (@Feature1_Permissions.Permission_6.AsInt())</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_6)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_1 | @(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_3 (@(Feature1_Permissions.Permission_1.AsInt() + Feature1_Permissions.Permission_3.AsInt()))</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_1 | Feature1_Permissions.Permission_3)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_2 | @(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_6 (@(Feature1_Permissions.Permission_2.AsInt() + Feature1_Permissions.Permission_6.AsInt()))</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_2 | Feature1_Permissions.Permission_6)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_5 | @(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_6 (@(Feature1_Permissions.Permission_5.AsInt() + Feature1_Permissions.Permission_6.AsInt()))</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_5 | Feature1_Permissions.Permission_6)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_1 | @(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_5 | @(nameof(Feature1_Permissions)).@Feature1_Permissions.Permission_6 (@(Feature1_Permissions.Permission_1.AsInt() + Feature1_Permissions.Permission_5.AsInt() + Feature1_Permissions.Permission_6.AsInt()))</td>
+            <td>
+                <AuthorizeView PermissionsType="Feature1_Permissions" Permissions="@(Feature1_Permissions.Permission_1 | Feature1_Permissions.Permission_5 | Feature1_Permissions.Permission_6)">
+                    <Authorized>
+                        Authorized
+                    </Authorized>
+                    <NotAuthorized>
+                        <b>NOT</b> authorized
+                    </NotAuthorized>
+                </AuthorizeView>
+            </td>
+        </tr>
+    </tbody>
+</MudSimpleTable>

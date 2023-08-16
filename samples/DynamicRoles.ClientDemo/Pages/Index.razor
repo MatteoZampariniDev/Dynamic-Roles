@@ -1,0 +1,18 @@
+﻿@page "/"
+@using DynamicRoles.Blazor
+@using DynamicRoles.Core;
+@using DynamicRoles.SharedDemo.Permissions;
+
+<Microsoft.AspNetCore.Components.Authorization.AuthorizeView>
+    <Authorized>
+        <ul>
+            @foreach (var claim in context.User.Claims)
+            {
+                <li><b>@claim.Type</b>: @claim.Value</li>
+            }
+        </ul>
+    </Authorized>
+    <NotAuthorized>
+        <b>NOT</b> logged in.
+    </NotAuthorized>
+</Microsoft.AspNetCore.Components.Authorization.AuthorizeView>

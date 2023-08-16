@@ -1,0 +1,80 @@
+﻿@using DynamicRoles.Core;
+@using DynamicRoles.SharedDemo.Models;
+
+@inherits CommonComponent
+@typeparam TPermissionType
+
+@if (PermissionsData != null)
+{
+    @*empty line*@
+    <tr>
+        <th></th>
+        @if (RolesVm != null)
+        { 
+            @foreach (var role in RolesVm.Roles) { <th></th> }
+        }
+    </tr>
+
+    @*Permission type + select all*@
+    <tr>
+        <th>
+            <MudText Typo="Typo.subtitle2">
+                @PermissionsTypeName()
+            </MudText>
+            <MudText Typo="Typo.caption">
+                @PermissionsTypeDescription()
+            </MudText>
+        </th>
+
+        @if (RolesVm != null)
+        {
+            @foreach (var role in RolesVm.Roles)
+            {
+                <th>
+                    <MudTooltip Text="@(PermissionsEvaluator.HasAll<RoleDto, TPermissionType>(role) ? "Revoke All" : "Grant All")" Arrow="true" Placement="Placement.Right">
+                        <MudCheckBox Checked="@(PermissionsEvaluator.HasAll<RoleDto, TPermissionType>(role))"
+                         CheckedChanged="(bool v) => SetAllAsync(role, v)"
+                         Disabled="!Authorize()"
+                         Color="Color.Primary" UnCheckedColor="Color.Default" Dense="true" />
+                        <MudText Typo="Typo.body2">
+                            @($"Current Value: {PermissionsMapper.AsInt(PermissionsMapper.GetPermissionFromSource<RoleDto, TPermissionType>(role).ownedPermission)}")
+                        </MudText>
+                    </MudTooltip>
+                </th>
+            }
+        }
+    </tr>
+
+    @*Permissions*@
+    @foreach (var p in PermissionsData)
+    {
+        @if (PermissionsMapper.AsInt(p) > 0)
+        {
+            <tr>
+                <th>
+                    <MudText Typo="Typo.body2">
+                        @PermissionNameAndGroup(p)
+                    </MudText>
+                    <MudText Typo="Typo.caption">
+                        @($"(ID: {PermissionsMapper.AsInt(p)}) {PermissionDescription(p)}")
+                    </MudText>
+                </th>
+
+                @if (RolesVm != null)
+                {
+                    @foreach (var role in RolesVm.Roles)
+                    {
+                        <th>
+                            <MudTooltip Text="@(PermissionsTooltip(role, p))" Arrow="true" Placement="Placement.Right">
+                                <MudCheckBox Checked="PermissionsEvaluator.HasPermission(role, p)"
+                                 CheckedChanged="(bool v) => SetAsync(role, p, v)"
+                                             Disabled="!Authorize() || !PermissionsEvaluator.IsUnlockedPermission(role, p)"
+                                 Color="Color.Primary" UnCheckedColor="Color.Default" Dense="true" />
+                            </MudTooltip>
+                        </th>
+                    }
+                }
+            </tr>
+        }
+    }
+}

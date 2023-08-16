@@ -1,0 +1,58 @@
+﻿@attribute [Authorize]
+@page "/roles"
+
+@using DynamicRoles.Blazor
+@using DynamicRoles.SharedDemo.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+
+@if (RoleVm != null)
+{
+    <MudSimpleTable Style="overflow-x: auto;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Feature 1</th>
+                <th>Feature 2</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in RoleVm.Roles)
+            {
+                <tr>
+                    <td>@row.Id</td>
+                    <td>@row.Name</td>
+                    <td>@row.Feature1_Permissions</td>
+                    <td>@row.Feature2_Permissions</td>
+                    <td>
+                        <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                            <MudTooltip Text="Edit">
+                                <MudIconButton Icon="@Icons.Material.Filled.Edit" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Small" OnClick="() => Edit(row.Id)" />
+                            </MudTooltip>
+                            <MudTooltip Text="Permissions">
+                                <MudIconButton Icon="@Icons.Material.Filled.Policy" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Small" OnClick="() => EditPermissions()" />
+                            </MudTooltip>
+                            <MudTooltip Text="Delete">
+                                <MudIconButton Icon="@Icons.Material.Filled.Delete" Variant="Variant.Outlined" Color="Color.Error" Size="Size.Small" OnClick="() => Delete(row.Id)" />
+                            </MudTooltip>  
+                        </MudButtonGroup>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    <MudTooltip Text="Add">
+                        <MudIconButton Icon="@Icons.Material.Filled.Add" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Small" OnClick="() => Edit()"/>
+                    </MudTooltip>
+                </td>
+            </tr>
+        </tbody>
+    </MudSimpleTable>
+}
+else
+{
+    <MudStack Style="height: 100%; width: 100%" Justify="Justify.Center" AlignItems="AlignItems.Center" Row="true">
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    </MudStack>
+}
