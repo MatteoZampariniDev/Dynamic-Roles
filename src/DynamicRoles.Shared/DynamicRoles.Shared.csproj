@@ -16,7 +16,7 @@
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <RootNamespace>DynamicRoles.Shared</RootNamespace>
 	  <AssemblyName>DynamicRoles.Shared</AssemblyName>
-	  <PackageId>DynamicRoles.Shared-0A11650E-D8EE-487B-9417-A76F4304DEF8</PackageId>
+	  <PackageId>DynamicRoles.Shared</PackageId>
 	  <IsPackable>true</IsPackable>
 	  <Description>Roles with permissions that can be changed without updating the code.</Description>
 	  <PackageProjectUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</PackageProjectUrl>
