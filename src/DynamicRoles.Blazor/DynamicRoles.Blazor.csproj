@@ -16,7 +16,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>DynamicRoles.Blazor</RootNamespace>
 		<AssemblyName>DynamicRoles.Blazor</AssemblyName>
-		<PackageId>DynamicRoles.Blazor</PackageId>
+		<PackageId>DynamicRolesBlazor</PackageId>
 		<IsPackable>true</IsPackable>
 		<Description>Roles with permissions that can be changed without updating the code.</Description>
 		<PackageProjectUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</PackageProjectUrl>

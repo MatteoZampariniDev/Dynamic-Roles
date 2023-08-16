@@ -16,7 +16,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>DynamicRoles.Core</RootNamespace>
 		<AssemblyName>DynamicRoles.Core</AssemblyName>
-		<PackageId>DynamicRoles.Core</PackageId>
+		<PackageId>DynamicRolesCore</PackageId>
 		<IsPackable>true</IsPackable>
 		<Description>Roles with permissions that can be changed without updating the code.</Description>
 		<PackageProjectUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</PackageProjectUrl>
