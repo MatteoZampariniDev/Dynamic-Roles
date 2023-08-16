@@ -30,28 +30,28 @@ jobs:
 
       # Publish
     - name: Publish DynamicRoles.Core
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Core/DynamicRoles.Core.csproj
           INCLUDE_SYMBOLS: true
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
     - name: Publish DynamicRoles.Server
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Server/DynamicRoles.Server.csproj
           INCLUDE_SYMBOLS: true
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
     - name: Publish DynamicRoles.Blazor
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
           INCLUDE_SYMBOLS: true
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
     - name: Publish DynamicRoles.Tests
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Tests/DynamicRoles.Tests.csproj
           INCLUDE_SYMBOLS: true
