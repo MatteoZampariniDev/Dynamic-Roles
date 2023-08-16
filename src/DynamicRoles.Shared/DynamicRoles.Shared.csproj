@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <Title>DynamicRolesShared</Title>
+	  <Title>DynamicRoles.Shared</Title>
 	  <Version>1.0.2</Version>
 	  <Authors>MatteoZampariniDev</Authors>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
