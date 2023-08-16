@@ -29,7 +29,7 @@ jobs:
       run: dotnet test DynamicRoles.sln --configuration Release --no-build --verbosity normal
 
       # Publish
-    - name: Publish DynamicRoles.Core
+    - name: Publish DynamicRolesCore
       uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Core/DynamicRoles.Core.csproj
@@ -43,7 +43,7 @@ jobs:
           INCLUDE_SYMBOLS: true
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
-    - name: Publish DynamicRoles.Blazor
+    - name: Publish DynamicRolesBlazor
       uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
