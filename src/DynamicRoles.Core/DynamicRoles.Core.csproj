@@ -1,24 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Title>Dynamic Roles</Title>
+		<Title>DynamicRoles.Core</Title>
 		<Version>1.0.0</Version>
-		<Authors>MatteoZampariniDev</Authors>		
-		<PackageDescription>Roles with permissions that can be changed without updating the code.</PackageDescription>
-		<RepositoryUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</RepositoryUrl>
+		<Authors>MatteoZampariniDev</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<IncludeSymbols>true</IncludeSymbols>	
+		<IncludeSymbols>true</IncludeSymbols>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 
+		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
-		<ImplicitUsings>false</ImplicitUsings>
-		<TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<RootNamespace>DynamicRoles.Core</RootNamespace>
 		<AssemblyName>DynamicRoles.Core</AssemblyName>
-		<PackageId>DynamicRoles.Core</PackageId>
+		<PackageId>DynamicRoles.Core-0A11650E-D8EE-487B-9417-A76F4304DEF8</PackageId>
+		<IsPackable>true</IsPackable>
+		<Description>Roles with permissions that can be changed without updating the code.</Description>
+		<PackageProjectUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</PackageProjectUrl>
 	</PropertyGroup>
-		
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	
 	<ItemGroup>
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>

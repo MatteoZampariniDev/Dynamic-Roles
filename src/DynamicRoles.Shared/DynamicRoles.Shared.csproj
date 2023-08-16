@@ -1,23 +1,33 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <!--<Title>Dynamic Roles</Title>
+	  <Title>DynamicRoles.Shared</Title>
 	  <Version>1.0.0</Version>
 	  <Authors>MatteoZampariniDev</Authors>
-	  <PackageDescription>Roles with permissions that can be changed without updating the code.</PackageDescription>
-	  <RepositoryUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</RepositoryUrl>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
 	  <IncludeSymbols>true</IncludeSymbols>
-	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>-->
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
 
 	  <TargetFramework>net7.0</TargetFramework>
 	  <Nullable>enable</Nullable>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <RootNamespace>DynamicRoles.Shared</RootNamespace>
 	  <AssemblyName>DynamicRoles.Shared</AssemblyName>
-	  <!--<PackageId>DynamicRoles.Shared</PackageId>-->
+	  <PackageId>DynamicRoles.Shared-0A11650E-D8EE-487B-9417-A76F4304DEF8</PackageId>
+	  <IsPackable>true</IsPackable>
+	  <Description>Roles with permissions that can be changed without updating the code.</Description>
+	  <PackageProjectUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</PackageProjectUrl>
   </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.4" />
