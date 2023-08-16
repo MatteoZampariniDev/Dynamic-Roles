@@ -3,16 +3,16 @@
 	<PropertyGroup>
 		<Title>Dynamic Roles</Title>
 		<Version>1.0.0</Version>
-		<Authors>Matteo Zamparini</Authors>		
+		<Authors>MatteoZampariniDev</Authors>		
 		<PackageDescription>Roles with permissions that can be changed without updating the code.</PackageDescription>
-		<RepositoryUrl></RepositoryUrl>
+		<RepositoryUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</RepositoryUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<IncludeSymbols>true</IncludeSymbols>
-		<ImplicitUsings>false</ImplicitUsings>
-		<Nullable>enable</Nullable>
+		<IncludeSymbols>true</IncludeSymbols>	
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>false</ImplicitUsings>
 		<TargetFrameworks>net7.0;netstandard2.1</TargetFrameworks>
 		<RootNamespace>DynamicRoles.Core</RootNamespace>
 		<AssemblyName>DynamicRoles.Core</AssemblyName>

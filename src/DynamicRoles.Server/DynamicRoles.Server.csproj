@@ -1,10 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+
+	  <Title>Dynamic Roles</Title>
+	  <Version>1.0.0</Version>
+	  <Authors>MatteoZampariniDev</Authors>
+	  <PackageDescription>Roles with permissions that can be changed without updating the code.</PackageDescription>
+	  <RepositoryUrl>https://github.com/MatteoZampariniDev/Dynamic-Roles</RepositoryUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+	  <IncludeSymbols>true</IncludeSymbols>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+	  <TargetFramework>net7.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <RootNamespace>DynamicRoles.Server</RootNamespace>
+	  <AssemblyName>DynamicRoles.Server</AssemblyName>
+	  <PackageId>DynamicRoles.Server</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
