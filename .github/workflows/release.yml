@@ -1,75 +1,25 @@
-### source https://lukelowrey.com/use-github-actions-to-publish-nuget-packages/
-
-#
 name: Release to NuGet.org
 
 on:
-  push:
-    branches: [ main ]
+  workflow_call:
+    inputs:
+      projectName:
+        required: true
+        type: string
+      projectPath:
+        required: true
+        type: string
+    secrets:
+      NUGET_API_KEY:
+        required: true
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    
-      # NET Core
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 7.0.x
-
-      # NET Standard
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 2.1.x
-
-      # Restore Dependencies
-    - name: Restore dependencies
-      run: dotnet restore DynamicRoles.sln
-
-      # Test
-    - name: Build
-      run: dotnet build DynamicRoles.sln --configuration Release --no-restore
-
-      # Test
-    - name: Test
-      run: dotnet test DynamicRoles.sln --configuration Release --no-build --verbosity normal
-
-      # Publish
-    - name: Publish DynamicRolesCore
+    - name: Publish ${{ inputs.projectName }}
       uses: alirezanet/publish-nuget@v3.0.0
       with:
-          PROJECT_FILE_PATH: src/DynamicRoles.Core/DynamicRoles.Core.csproj
-          INCLUDE_SYMBOLS: true
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-
-    - name: Publish DynamicRoles.Server
-      uses: alirezanet/publish-nuget@v3.0.0
-      with:
-          PROJECT_FILE_PATH: src/DynamicRoles.Server/DynamicRoles.Server.csproj
-          INCLUDE_SYMBOLS: true
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-
-    - name: Publish DynamicRolesBlazor
-      uses: alirezanet/publish-nuget@v3.0.0
-      with:
-          PROJECT_FILE_PATH: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
-          INCLUDE_SYMBOLS: true
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-
-    - name: Publish DynamicRoles.Tests
-      uses: alirezanet/publish-nuget@v3.0.0
-      with:
-          PROJECT_FILE_PATH: src/DynamicRoles.Tests/DynamicRoles.Tests.csproj
-          INCLUDE_SYMBOLS: true
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-
-    - name: Publish DynamicRoles.Shared
-      uses: alirezanet/publish-nuget@v3.0.0
-      with:
-          PROJECT_FILE_PATH: src/DynamicRoles.Shared/DynamicRoles.Shared.csproj
+          PROJECT_FILE_PATH: ${{ inputs.projectPath }}
           INCLUDE_SYMBOLS: true
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}

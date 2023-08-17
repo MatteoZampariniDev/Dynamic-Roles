@@ -1,0 +1,35 @@
+name: Build and Test
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    # NET Core
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.x
+
+    # NET Standard
+    - name: Setup .NET Standard
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.1.x
+
+    # Restore Dependencies
+    - name: Restore dependencies
+      run: dotnet restore DynamicRoles.sln
+
+    # Build
+    - name: Build
+      run: dotnet build DynamicRoles.sln --configuration Release --no-restore
+
+    # Test
+    - name: Test
+      run: dotnet test DynamicRoles.sln --configuration Release --no-build --verbosity normal
