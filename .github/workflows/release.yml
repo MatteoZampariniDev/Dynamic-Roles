@@ -3,9 +3,6 @@ name: Release to NuGet.org
 on:
   workflow_call:
     inputs:
-      projectName:
-        required: true
-        type: string
       projectPath:
         required: true
         type: string
@@ -17,7 +14,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Publish ${{ inputs.projectName }}
+    - name: Publish to NuGet
       uses: alirezanet/publish-nuget@v3.0.0
       with:
           PROJECT_FILE_PATH: ${{ inputs.projectPath }}
