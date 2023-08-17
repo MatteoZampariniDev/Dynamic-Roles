@@ -13,6 +13,7 @@ jobs:
 
   release-1:
     uses: ./.github/workflows/release.yml
+    needs: [build]
     with:
       projectName: DynamicRolesCore
       projectPath: src/DynamicRoles.Core/DynamicRoles.Core.csproj
@@ -21,6 +22,7 @@ jobs:
 
   release-2:
     uses: ./.github/workflows/release.yml
+    needs: [build]
     with:
       projectName: DynamicRoles.Server
       projectPath: src/DynamicRoles.Server/DynamicRoles.Server.csproj
@@ -29,6 +31,7 @@ jobs:
 
   release-3:
     uses: ./.github/workflows/release.yml
+    needs: [build]
     with:
       projectName: DynamicRolesBlazor
       projectPath: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
@@ -37,6 +40,7 @@ jobs:
 
   release-4:
     uses: ./.github/workflows/release.yml
+    needs: [build]
     with:
       projectName: DynamicRoles.Shared
       projectPath: src/DynamicRoles.Shared/DynamicRoles.Shared.csproj
@@ -45,6 +49,7 @@ jobs:
 
   release-5:
     uses: ./.github/workflows/release.yml
+    needs: [build]
     with:
       projectName: DynamicRoles.Tests
       projectPath: src/DynamicRoles.Tests/DynamicRoles.Tests.csproj
