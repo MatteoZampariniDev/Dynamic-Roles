@@ -1,0 +1,57 @@
+name: Main Branch Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+  
+jobs:
+  # Build and test
+  build:
+    uses: ./.github/workflows/build_and_test.yml
+
+  release-1:
+    uses: ./.github/workflows/release.yml
+    needs: [build_and_test]
+    with:
+      projectName: DynamicRolesCore
+      projectPath: src/DynamicRoles.Core/DynamicRoles.Core.csproj
+    secrets:
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+  release-2:
+    uses: ./.github/workflows/release.yml
+    needs: [build_and_test]
+    with:
+      projectName: DynamicRoles.Server
+      projectPath: src/DynamicRoles.Server/DynamicRoles.Server.csproj
+    secrets:
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+  release-3:
+    uses: ./.github/workflows/release.yml
+    needs: [build_and_test]
+    with:
+      projectName: DynamicRolesBlazor
+      projectPath: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
+    secrets:
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+  release-4:
+    uses: ./.github/workflows/release.yml
+    needs: [build_and_test]
+    with:
+      projectName: DynamicRoles.Shared
+      projectPath: src/DynamicRoles.Shared/DynamicRoles.Shared.csproj
+    secrets:
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+  release-5:
+    uses: ./.github/workflows/release.yml
+    needs: [build_and_test]
+    with:
+      projectName: DynamicRoles.Tests
+      projectPath: src/DynamicRoles.Tests/DynamicRoles.Tests.csproj
+    secrets:
+      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

@@ -1,0 +1,12 @@
+name: Test Branch Workflow
+
+on:
+  push:
+    branches: [ test ]
+
+  workflow_dispatch:
+  
+jobs:
+  # Build and test
+  build:
+    uses: ./.github/workflows/build_and_test.yml
