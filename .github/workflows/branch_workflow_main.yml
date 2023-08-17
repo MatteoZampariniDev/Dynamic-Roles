@@ -15,7 +15,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     needs: [build]
     with:
-      projectName: DynamicRolesCore
       projectPath: src/DynamicRoles.Core/DynamicRoles.Core.csproj
     secrets:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
@@ -24,7 +23,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     needs: [build]
     with:
-      projectName: DynamicRoles.Server
       projectPath: src/DynamicRoles.Server/DynamicRoles.Server.csproj
     secrets:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
@@ -33,7 +31,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     needs: [build]
     with:
-      projectName: DynamicRolesBlazor
       projectPath: src/DynamicRoles.Blazor/DynamicRoles.Blazor.csproj
     secrets:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
@@ -42,7 +39,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     needs: [build]
     with:
-      projectName: DynamicRoles.Shared
       projectPath: src/DynamicRoles.Shared/DynamicRoles.Shared.csproj
     secrets:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
@@ -51,7 +47,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     needs: [build]
     with:
-      projectName: DynamicRoles.Tests
       projectPath: src/DynamicRoles.Tests/DynamicRoles.Tests.csproj
     secrets:
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
