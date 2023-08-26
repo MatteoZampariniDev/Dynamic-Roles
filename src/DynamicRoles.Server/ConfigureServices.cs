@@ -16,10 +16,28 @@ public static class ConfigureServices
         where TRole : IdentityRole
         where TDbContext : DbContext, IPersistedGrantDbContext
     {
-        services.AddDefaultIdentity<TUser>()
-            .AddRoles<TRole>()
-            .AddEntityFrameworkStores<TDbContext>()
-            .AddClaimsPrincipalFactory<DefaultPermissionsUserClaimsPrincipalFactory<TUser, TRole>>();
+        return services.AddDefaultIdentityWithDynamicRoles<TUser, TRole, TDbContext>(null);
+    }
+
+    public static IServiceCollection AddDefaultIdentityWithDynamicRoles<TUser, TRole, TDbContext>(this IServiceCollection services, Action<IdentityOptions>? configureOptions)
+        where TUser : class
+        where TRole : IdentityRole
+        where TDbContext : DbContext, IPersistedGrantDbContext
+    {
+        if (configureOptions != null)
+        {
+            services.AddDefaultIdentity<TUser>(configureOptions)
+                .AddRoles<TRole>()
+                .AddEntityFrameworkStores<TDbContext>()
+                .AddClaimsPrincipalFactory<DefaultPermissionsUserClaimsPrincipalFactory<TUser, TRole>>();
+        }
+        else
+        {
+            services.AddDefaultIdentity<TUser>()
+                .AddRoles<TRole>()
+                .AddEntityFrameworkStores<TDbContext>()
+                .AddClaimsPrincipalFactory<DefaultPermissionsUserClaimsPrincipalFactory<TUser, TRole>>();
+        }
 
         services.AddIdentityServer()
             .AddApiAuthorization<TUser, TDbContext>(options =>
